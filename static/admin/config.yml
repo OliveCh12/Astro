@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: repo
+  repo: OliveCh12/Astro
   branch: master
   
 media_folder: "static/uploads"
