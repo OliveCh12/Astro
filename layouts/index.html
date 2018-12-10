@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="container">
+  Start editing content inside the folder <code>layouts/index.html</code> <br />
+  <a href="" class="btn btn-primary mt-3" onclick="alertMe()">Click Me</a>
+
+  <section>
+    {{ range first 5 (where .Pages.ByPublishDate.Reverse "Section" "posts") }}
+        {{ .title}}
+    {{ end }}
+  </section>
+</div>
+{{ end }}
