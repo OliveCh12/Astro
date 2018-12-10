@@ -8,6 +8,9 @@ body {
   margin: 0;
   font-family: "Roboto" !important;
   background-color: #222831;
+  h1{
+    font-weight: bolder;
+  }
   a {
     color: #e14594;
   }
@@ -17,8 +20,6 @@ body {
     opacity: 0.7;
   }
 }
-
-
 
 header {
   background: #2b3595;
@@ -54,5 +55,4 @@ footer {
   }
 
   background-color: #182952;
- 
 }

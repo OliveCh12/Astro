@@ -1,12 +1,17 @@
 {{ define "main" }}
-    
-    {{ range .Paginator.Pages }}
-        <article>
-            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-            {{ .Content }}
-        </article>
-    {{ end }}
-
-    {{ template "_internal/pagination.html" . }}
+<div class="container">
+  {{ range.Paginator.Pages }}
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </h5>
+      <p class="card-text">{{ .Summary }}</p>
+      <a href="{{ .Permalink }}" class="btn btn-light">Read More</a>
+    </div>
+  </div>
+  {{ end }}
+  {{ template "_internal/pagination.html" . }}
+</div>
 
 {{ end }}

@@ -1,12 +1,27 @@
 {{ define "main" }}
 <div class="container">
   Start editing content inside the folder <code>layouts/index.html</code> <br />
-  <a href="" class="btn btn-primary mt-3" onclick="alertMe()">Click Me</a>
+  <a href="/blog" class="btn btn-primary mt-3 mb-3" onclick="alertMe()">Go to Blog</a>
 
+  <h3>Last Articles</h3>
   <section>
-    {{ range first 5 (where .Pages.ByPublishDate.Reverse "Section" "posts") }}
-        {{ .title}}
-    {{ end }}
+    <div class="card-deck">
+      {{ range first 5 (where .Pages.ByPublishDate.Reverse "Section" "blog") }}
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{{ .Permalink }}">{{ .Title}}</a>
+          </h5>
+          <p class="card-text">{{ .Summary }}</p>
+          <p class="card-text">
+            <small class="text-muted"
+              >{{.Date.Format "Monday, Jan 2, 2006"}}
+            </small>
+          </p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
   </section>
 </div>
 {{ end }}
